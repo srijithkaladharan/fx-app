@@ -6,4 +6,196 @@ html, body {
 body { 
     margin: 0; 
     font-family: Roboto, "Helvetica Neue", sans-serif; 
+    font-size: 16px;
 }
+
+//Login Component
+.login-container {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    height: 100%; 
+    width: 100%;
+}
+.login-card {
+    width: 40%;
+    padding: 20px;
+
+    .login-card-title {
+        font-size: 1.5rem;
+    }
+
+    label {
+        display: block;
+    }
+
+    input {
+        width: 99%;
+        height: 40px;
+        line-height: 10px;
+        border-radius: 5px;
+        font-size: 1rem;
+        outline: none;
+        padding: 5px;
+    }
+    .form-error-msg {
+        margin-top: 5px;
+        padding: 2px;
+        font-size: 0.75rem;
+        width: 99%;
+    }
+
+    .login-btn {
+        float: right;
+        margin-top: 20px;
+        margin-right: 5px;
+    }
+}
+
+.form-input,
+.form-input:focus {
+    border: 1px solid purple;
+}
+.form-input-error {
+    border: 2px solid red;
+}
+.input-box {
+    margin-top: 5px;
+}
+
+.form-error-msg {
+    margin-top:2px;
+}
+
+.btn-disabled:disabled {
+    cursor: not-allowed;
+}
+.material-icons {
+    font-size: 48px;
+}
+
+// header
+.header-nav {
+    background-color: #000000;
+
+    a {
+        color: #ffffff !important;
+        margin-left: 20px;
+    }
+
+    .logout-btn {
+        background-color: #ffffff;
+        color: #000000;
+        margin-right: 20px;
+        transition: 0.2s;
+    }
+    .logout-btn:hover{
+        background-color: grey;
+        color: #ffffff;
+    }
+}
+.header-nav .user-name {
+    color: #ffffff; 
+    margin-right: 20px; 
+    line-height: 20px; 
+    vertical-align: -webkit-baseline-middle;
+}
+
+//transaction
+.rates-board {
+    margin-top: 50px;
+}
+
+.rates-card {
+    margin-top: 70px;
+    height: 180px;
+    width: 90%;
+    background-color: #393e46;
+    border-radius: 25px;
+    transition: transform 0.2s;
+
+    .card-body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
+    }
+    .rate {
+        font-size: 1.5rem;
+    }
+    .spread {
+        font-size: 1rem;
+    }
+    .currency {
+        color: #0092ca;
+    }
+}
+.rates-card:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.modal {
+    background: #000000bd;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-element {
+    margin-bottom: 20px;
+}
+
+.form-element input {
+    margin-left: 20px;
+}
+.form-input-error {
+    padding: 5px;
+    font-size: 12px;
+    margin-top: 5px;
+}
+.form-element.position label:first-child {
+    margin-right: 30px;
+}
+.form-element.position input {
+    margin-left: 20px;
+    margin-right: 5px;
+}
+.form-btn-block {
+    display: flex;
+    justify-content: flex-end;
+}
+.form-btn-block button {
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.dash-container {
+    margin-top: 20px;
+    padding: 10px;
+
+    h3 {
+        margin-bottom: 10px;
+    }
+}
+
+.dash-table-btn {
+    padding: 5px;
+    font-size: 0.75rem;
+    margin-right: 7px;
+}
+
+table {
+    border: 1px solid #000000;
+}
+
+td, th {
+    text-align: center;
+}
+

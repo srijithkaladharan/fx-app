@@ -1,0 +1,8 @@
+{
+    "/dev/*": {
+        "target": "https://29zey5rrfh.execute-api.ap-south-1.amazonaws.com",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "info"
+    }
+}

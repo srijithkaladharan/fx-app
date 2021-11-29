@@ -1,0 +1,54 @@
+<div [ngStyle]="{'display':displayStyle}" class="modal">
+    <div class=" modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Transaction Request</h5>
+                <button type="button" class="btn-close" (click)="discardForm()"></button>
+            </div>
+            <div class="modal-body">
+
+                <form [formGroup]="transactionForm" (ngSubmit)="submitTransaction()">
+                    <div class="form-container">
+
+                        <div class="form-element">
+                            <label for="clientName">Client Name</label>
+                            <select class="custom-select" (change)="changeClient($event)" formControlName="clientName">
+                                <option value="" disabled>Select Client</option>
+                                <option *ngFor="let client of clients" [ngValue]="client.id">{{client.name}}</option>
+                            </select>
+                            <div class="alert alert-danger form-input-error"
+                                *ngIf="transactionForm.get('clientName').errors && transactionForm.get('clientName').touched">
+                                <span style="margin-left: 5px;">Client Name is required.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-element position">
+                            <label for="position">Position</label>
+                            <input id="buy" value="buy" name="position" type="radio" formControlName="position">
+                            <label for="buy">Buy</label>
+                            <input id="sell" value="sell" name="position" type="radio" formControlName="position">
+                            <label for="sell">Sell</label>
+                        </div>
+
+                        <div class="form-element quantity">
+                            <label for="quantity">Quantity</label>
+                            <input id="quantity" formControlName="quantity" type="number">
+                            <div class="alert alert-danger form-input-error"
+                                *ngIf="transactionForm.get('quantity').errors && transactionForm.get('quantity').touched">
+                                <span style="margin-left: 5px;">Quantity is required.</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-btn-block">
+                        <button type="button" class="btn btn-secondary" (click)="discardForm()">Discard</button>
+                        <button type="button" class="btn btn-primary" [disabled]="!transactionForm.valid" type="submit">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

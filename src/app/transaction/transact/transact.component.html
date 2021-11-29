@@ -1,0 +1,16 @@
+<div class="container rates-board">
+    <div class="row">
+        <div class="col-6 col-sm-6 col-md-4" *ngFor="let rate of rates">
+            <div class="card rates-card" (click)="openTransact(rate)">
+                <div class="card-body">
+                    <h3 class="currency">{{rate.currency}}</h3>
+                    <p class="rate">{{rate.rateFromHq}}</p>
+                    <p class="spread">Spread: {{rate.spread}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<create-transaction-modal-form [rate]="selectedRate" [branchId]="branchId" [clients]="clients">
+</create-transaction-modal-form>

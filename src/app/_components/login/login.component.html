@@ -1,0 +1,23 @@
+<div class="login-container">
+    <div class="card login-card">
+        <p class="login-card-title">Login</p>
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input [(ngModel)]="userEmailId" (change)="onEmailChange()"
+                    [ngClass]="email.touched && !email.valid ? 'form-input-error' : 'form-input'" required ngModel
+                    pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="input-box" name="email" id="email"
+                    #email="ngModel" type="email">
+                <div class="alert alert-danger form-error-msg" *ngIf="email.touched && !email.valid">
+                    <span style="margin-left: 5px;">Email is required.</span>
+                </div>
+            </div>
+            <button [disabled]="loginForm.invalid" class="btn btn-primary btn-disabled login-btn">
+                Login
+            </button>
+        </form>
+        <div *ngIf="isLoginFailed" class="alert alert-danger form-error-msg" style="margin-top:20px">
+            <span style="margin-left: 5px;">Login Failed! Enter a valid Email.</span>
+        </div>
+    </div>
+</div>

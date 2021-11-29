@@ -1,0 +1,36 @@
+<div [ngStyle]="{'display':displayStyle}" class="modal">
+    <div class=" modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Comments</h5>
+                <button type="button" class="btn-close" (click)="discardForm()"></button>
+            </div>
+            <div class="modal-body">
+
+                <p>You are about to change the status to {{status}} for transaction - {{transactionId}}</p>
+
+                <form [formGroup]="reasonForm" (ngSubmit)="updateStatus()">
+                    <div class="form-container">
+
+                        <div class="form-element quantity">
+                            <label for="reason">Comments</label>
+                            <textarea id="reason" formControlName="reason"></textarea>
+                            <div class="alert alert-danger form-input-error"
+                                *ngIf="reasonForm.get('reason').errors && reasonForm.get('reason').touched">
+                                <span style="margin-left: 5px;">Comments is required.</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-btn-block">
+                        <button type="button" class="btn btn-secondary" (click)="discardForm()">Cancel</button>
+                        <button type="button" class="btn btn-primary" [disabled]="!reasonForm.valid" type="submit">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
